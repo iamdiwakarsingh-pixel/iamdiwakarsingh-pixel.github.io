@@ -1,0 +1,145 @@
+You are an expert full-stack developer and UI/UX designer.
+Create a personal academic website for Dr. Diwakar Singh with a Spiritual + Academic visual theme.
+Use smooth animations, serif fonts mixed with clean sans-serif, soft earthy colors (saffron, deep blue, white, gold accents), and subtle Indian philosophical motifs (Mandala lines, light gradients, minimal geometric symbolism).
+The website must contain clean, modular code using React + Tailwind CSS (preferred).
+If React is not possible, then build it in HTML/CSS/JS but maintain component-like structure.
+________________________________________
+🔶 SITE STRUCTURE
+1. Home Page
+•	Hero section with name: “Dr. Diwakar Singh”
+•	One-line identity: Researcher | Educator | Former Indian Air Force Officer | Scholar of Social Entrepreneurship & Indigenous Management
+•	Background image: abstract spiritual geometry or soft gradient
+•	Buttons:
+o	Explore My Journey
+o	Download CV (PDF)
+________________________________________
+2. About Me / My Journey
+Use a narrative tone that integrates:
+•	20 years of service in the Indian Air Force (1998–2018)
+•	Transition to academia, research, and purpose-driven work
+•	Spiritual influences on research and teaching
+•	Grounded, compassionate, Indian ethos
+Use a timeline with milestones:
+•	Early education
+•	Military leadership roles
+•	MA Psychology, MBA (HRM), PhD Journey
+•	Entry into academia
+•	Assistant Professor at EDII (2025–present)
+Add a personal philosophy section:
+•	Focus on empathy, lokasamgraha, seva, sustainability, inner clarity
+•	Blending academic rigor with spiritual wisdom
+________________________________________
+3. Academic Qualifications
+Populate this section fully:
+•	PhD (Management), Dr. B. R. Ambedkar University Delhi, 2024
+Thesis: Understanding Organizational Culture of Social Enterprises Using Case Study Approach
+•	MBA (OB/HRM), IGNOU, 2011
+•	MA (Psychology), Gujarat University, 2009
+•	BA (Hons), IGNOU, 2004
+Include a beautiful card layout for each qualification.
+________________________________________
+4. Research Interests
+Display as icons + text:
+•	Social Entrepreneurship & Indigenous Management
+•	Organizational Culture & OB
+•	Frugality, Jugaad & Innovation
+•	Spirituality & Management
+•	Qualitative Research Methods
+•	Indian Knowledge Systems
+________________________________________
+5. Publications Page
+Create a structured list with categories.
+Peer-Reviewed Journal Articles
+Use numbered list (full data from CV):
+1.	Navigating Paradox through Jugaad: Sustainability Practices in Indian Social Enterprises. Journal of Social Entrepreneurship (2025).
+2.	Lokasamgraha: An Indigenous Construct for Social Entrepreneurship. IIMB Management Review (2023).
+3.	Expanding Horizons of Social Entrepreneurship Through Indigenous Research. Journal of Social Entrepreneurship (2023).
+4.	Spirituality in Social Entrepreneurship. Social Enterprise Journal (2024).
+5.	Organizational Culture: A Longitudinal Study of a Public Sector Bank. Parikalpana (2023).
+6.	Employee Retention Review. IJSRST (2019).
+7.	Managing Cross-cultural Diversity. IOSR-JMCE (2014).
+Academy of Management Proceedings
+(Include all 3 entries)
+Book Chapters
+(Include all 4 entries)
+Manuscripts Under Review / In Preparation
+(Include all items from CV)
+Include filtering, collapsible sections, and a search bar.
+________________________________________
+6. Teaching Page
+Divide into categories:
+Entrepreneurship & Innovation Courses
+(List courses from CV)
+OB/HRM Courses
+(List all)
+Research Methods & Quant Courses
+(List all)
+Executive Education Delivered
+(List all programs)
+Use a clean table UI.
+________________________________________
+7. Projects & Research Engagements
+Create rich cards summarizing each major initiative:
+RAMP Ladakh – Strategic Execution Lead
+Enterprising Ladakh Initiative
+Khadi and Gramodyog Vikas Yojana Evaluation
+ATAL FDP – Social Enterprise Management
+Other Sponsored Research Proposals
+Include icons and short interpretations of impact.
+________________________________________
+8. Awards
+Use animated badges or laurel-style icons.
+Academic Awards
+•	PhD shortlisted for UGC Excellence Citation Award (2025)
+•	Best Paper Award (EDII Biennial, 2025)
+•	Best Reviewer Award (AOM, 2024)
+•	Multiple best paper awards
+Military Distinctions
+•	Commendation by AOC-in-C
+•	Best Air Warrior (twice)
+•	Flight Safety Award
+________________________________________
+9. Indian Air Force Journey
+Create a dignified separate section highlighting:
+•	Leadership roles
+•	HR operations
+•	Cybersecurity, IT systems, training
+•	Ethics, discipline, service mindset
+Add a quote representing duty and purpose.
+________________________________________
+10. Academic Services
+List:
+•	Reviewer roles
+•	Program coordination
+•	Event leadership
+•	Curriculum development
+•	Mentoring & volunteering
+________________________________________
+11. Workshops, FDPs & Certifications
+Display using badges or timeline.
+________________________________________
+12. Contact Page
+Include:
+•	Email
+•	Social links (GS, RG, LinkedIn, ORCID, Scopus)
+•	Contact form
+•	Optional spiritual quote
+Add a footer with copyright notice.
+________________________________________
+🔶 DESIGN REQUIREMENTS
+•	Overall theme: “Spiritual Scholarship”
+•	Soft textures, sacred geometry lines (very minimal)
+•	Use drop shadows and smooth hover animations
+•	Mobile responsive
+•	Accessible fonts (Playfair Display + Inter recommended)
+•	Each page must load fast
+________________________________________
+🔶 FINAL OUTPUT
+Deliver:
+1.	Complete React project folder (pages, components, assets)
+2.	Clean Tailwind config
+3.	Index with navigation bar + footer
+4.	All content pre-filled with Dr. Singh’s data
+5.	A downloadable version (ZIP)
+________________________________________
+
