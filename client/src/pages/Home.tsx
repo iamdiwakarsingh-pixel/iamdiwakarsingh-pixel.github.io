@@ -4,7 +4,7 @@ import { personalInfo } from "@/lib/data";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, BookOpen, Users, Anchor } from "lucide-react";
 import { Link } from "wouter";
-import heroBg from "@assets/generated_images/spiritual_abstract_geometry_background.png";
+import heroBg from "@assets/generated_images/clean_spiritual_abstract_geometry_background.png";
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/40 to-white/90 z-10" />
           <img
             src={heroBg}
-            alt="Background"
+            alt="Abstract spiritual background"
             className="w-full h-full object-cover opacity-80"
           />
         </div>
