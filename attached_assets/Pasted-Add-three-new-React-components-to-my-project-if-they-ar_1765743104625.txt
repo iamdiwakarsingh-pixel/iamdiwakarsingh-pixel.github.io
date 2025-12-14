@@ -1,0 +1,57 @@
+Add three new React components to my project if they are not already there: Home.jsx, About.jsx, and Research.jsx.
+Each component should use Tailwind CSS and display the exact text I provide below.
+Use clean, minimalist styling with serif headings (Playfair Display) and smooth spacing.
+Do NOT rewrite the text — just format it nicely in JSX.
+1. Home.jsx — Homepage Welcome Message
+Use this exact text inside a centered section:
+Welcome. I’m Dr. Diwakar Singh — a researcher, educator, and former Indian Air Force officer exploring the intersection of organizational culture, indigenous values, and social impact.
+My work is grounded in a simple belief: sustainable change emerges when human values, purpose, and innovation align.
+Through my research on social enterprises, indigenous constructs like lokasamgraha, jugaad, and spirituality at work, I seek to understand how mission-driven organizations create meaningful, ethical, and enduring change.
+Thank you for visiting. I invite you to explore my journey — from two decades of service in the Indian Air Force to a life committed to teaching, research, and nurturing transformational entrepreneurship.
+2. About.jsx — About Me / My Journey
+Use the full narrative text exactly as below, formatted with heading + paragraphs:
+A Journey of Service, Scholarship & Purpose
+My professional life began far from academia — in the disciplined and demanding environment of the Indian Air Force, where I served for over 20 years. Those two decades shaped my worldview in profound ways. Leading diverse teams, managing critical communication systems, and training young officers taught me the values of resilience, humility, precision, and service to a larger mission.
+Yet, as I progressed through my military career, I felt a growing calling toward understanding human behavior, organizational life, and the deeper forces that shape collective action. This curiosity guided me to pursue formal studies in Psychology, Human Resource Management, and later, a PhD in Management.
+Transitioning from Command to Inquiry
+Leaving the Air Force was not merely a career shift — it was a personal transformation. I stepped into academia with a beginner’s mind, carrying forward the discipline of military life and merging it with the reflective stillness cultivated through years of meditation and self-inquiry.
+During my doctoral work at Dr. B. R. Ambedkar University Delhi, I immersed myself in the field of social entrepreneurship. I realized that these organizations often operate with a wisdom that blends frugality, spiritual values, community orientation, and an unwavering commitment to human dignity. This inspired my dissertation: “Understanding Organizational Culture of Social Enterprises Using a Case Study Approach.”
+A Scholar Rooted in Indian Ethos
+My research is strongly shaped by Indian philosophical ideas — especially the principle of lokasamgraha, the spirit of working for the welfare of all. I explore how indigenous values, frugal innovation, and spiritual practices infuse culture into mission-driven organizations, enabling them to sustain impact even under resource constraints.
+Becoming an Educator & Researcher
+Today, as an Assistant Professor at the Entrepreneurship Development Institute of India (EDII), I teach courses on entrepreneurship, innovation, leadership, and positive psychology. In every classroom, I strive to cultivate curiosity, compassion, and the courage to create.
+My journey continues through writing, research collaborations, mentoring young scholars, and engaging with social enterprises across India — from eye care systems to community-led initiatives in challenging geographies like Ladakh.
+A Personal Philosophy
+Purpose is not discovered — it is practiced.
+Leadership is not authority — it is service.
+Innovation is not technology — it is empathy.
+I see scholarship as both a spiritual and social responsibility — a way to illuminate how organizations can remain humane, ethical, and sustainable in a world hungry for meaning.
+3. Research.jsx — Research Narrative
+Use this full text exactly as given:
+My research sits at the intersection of organizational culture, indigenous management, social entrepreneurship, and spirituality. I aim to understand how purpose-driven organizations navigate complexity, resource scarcity, and social missions while remaining resilient and values-driven.
+Core Questions That Guide My Work
+•	How do social enterprises balance dual missions of impact and sustainability?
+•	What cultural mechanisms enable frugality without compromising quality or dignity?
+•	How do indigenous constructs like lokasamgraha influence organizational behavior?
+•	Can spirituality be a legitimate, ethical, and practical resource for leadership?
+•	How do individuals and organizations enact hybridity — blending business logic with compassion and community wisdom?
+Research Approach
+My work is qualitative, interpretive, and deeply ethnographic. I spend time in the field — in hospitals, villages, counseling rooms, training centers — observing how people live their values through daily actions.
+This approach helps uncover:
+•	Tacit cultural norms
+•	Invisible tensions
+•	Micro-level practices
+•	Meaning-making processes
+•	Spiritual influences on decision-making
+Themes Emerging from My Scholarship
+•	Jugaad as a cultural logic for navigating paradoxes
+•	Frugal innovation as a moral, not just economic, practice
+•	Spirituality at work as a source of ethical grounding
+•	Cultural hybridity in mission-driven organizations
+•	Learning orientation in social enterprises
+•	Sustainability frameworks rooted in Indian ontologies
+My Vision as a Scholar
+I aspire to build knowledge that is indigenous yet globally relevant, empirical yet deeply human, theoretical yet accessible, spiritual yet academically rigorous. Ultimately, I hope my work contributes to creating enterprises that are not only successful — but soulful.
+UPDATE APP.JSX
+Import and render all components in order:
+Add smooth scrolling and section IDs.

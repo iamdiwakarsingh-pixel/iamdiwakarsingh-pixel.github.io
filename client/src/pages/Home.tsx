@@ -1,10 +1,10 @@
 import { Layout } from "@/components/layout";
-import { Button } from "@/components/ui/button";
-import { personalInfo } from "@/lib/data";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, BookOpen, Users, Anchor } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Download } from "lucide-react";
 import { Link } from "wouter";
 import heroBg from "@assets/generated_images/clean_spiritual_abstract_geometry_background.png";
+import { personalInfo } from "@/lib/data";
 
 export default function Home() {
   return (
@@ -37,7 +37,7 @@ export default function Home() {
               {personalInfo.title}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Link href="/about">
                 <Button size="lg" className="rounded-full px-8 text-lg h-14 bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl transition-all">
                   Explore My Journey <ArrowRight className="ml-2 w-5 h-5" />
@@ -49,79 +49,23 @@ export default function Home() {
                 </Button>
               </a>
             </div>
+
+            {/* New Welcome Message */}
+            <div className="max-w-3xl mx-auto space-y-6 text-lg md:text-xl font-light leading-relaxed text-secondary/80 bg-white/60 backdrop-blur-sm p-8 rounded-2xl border border-white/40 shadow-sm">
+              <p>
+                Welcome. I’m Dr. Diwakar Singh — a researcher, educator, and former Indian Air Force officer exploring the intersection of organizational culture, indigenous values, and social impact.
+              </p>
+              <p>
+                My work is grounded in a simple belief: sustainable change emerges when human values, purpose, and innovation align.
+              </p>
+              <p>
+                Through my research on social enterprises, indigenous constructs like lokasamgraha, jugaad, and spirituality at work, I seek to understand how mission-driven organizations create meaningful, ethical, and enduring change.
+              </p>
+              <p>
+                Thank you for visiting. I invite you to explore my journey — from two decades of service in the Indian Air Force to a life committed to teaching, research, and nurturing transformational entrepreneurship.
+              </p>
+            </div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Philosophy Section */}
-      <section className="py-24 bg-orange-50/50">
-        <div className="container px-4 mx-auto text-center max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="w-16 h-1 bg-accent mx-auto mb-8" />
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-8">
-              Personal Philosophy
-            </h2>
-            <p className="text-xl leading-loose text-muted-foreground font-light">
-              "{personalInfo.philosophy}"
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Highlights */}
-      <section className="py-24 bg-background">
-        <div className="container px-4 mx-auto">
-          <div className="grid md:grid-cols-3 gap-8">
-            <Link href="/research">
-              <motion.div 
-                whileHover={{ y: -5 }}
-                className="group cursor-pointer p-8 rounded-2xl bg-white border border-orange-100 shadow-sm hover:shadow-md transition-all text-center"
-              >
-                <div className="w-16 h-16 mx-auto bg-orange-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
-                  <BookOpen size={32} />
-                </div>
-                <h3 className="text-xl font-serif font-bold mb-3 text-secondary">Research</h3>
-                <p className="text-muted-foreground">
-                  Exploring Social Entrepreneurship, Indigenous Management, and Organizational Culture.
-                </p>
-              </motion.div>
-            </Link>
-
-            <Link href="/about">
-              <motion.div 
-                whileHover={{ y: -5 }}
-                className="group cursor-pointer p-8 rounded-2xl bg-white border border-orange-100 shadow-sm hover:shadow-md transition-all text-center"
-              >
-                <div className="w-16 h-16 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-colors text-secondary">
-                  <Anchor size={32} />
-                </div>
-                <h3 className="text-xl font-serif font-bold mb-3 text-secondary">Service</h3>
-                <p className="text-muted-foreground">
-                  20 years in the Indian Air Force, transitioning to academic leadership and mentorship.
-                </p>
-              </motion.div>
-            </Link>
-
-            <Link href="/teaching">
-              <motion.div 
-                whileHover={{ y: -5 }}
-                className="group cursor-pointer p-8 rounded-2xl bg-white border border-orange-100 shadow-sm hover:shadow-md transition-all text-center"
-              >
-                <div className="w-16 h-16 mx-auto bg-yellow-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors text-accent">
-                  <Users size={32} />
-                </div>
-                <h3 className="text-xl font-serif font-bold mb-3 text-secondary">Teaching</h3>
-                <p className="text-muted-foreground">
-                  Educating the next generation in Entrepreneurship, Innovation, and Organizational Behavior.
-                </p>
-              </motion.div>
-            </Link>
-          </div>
         </div>
       </section>
     </Layout>
