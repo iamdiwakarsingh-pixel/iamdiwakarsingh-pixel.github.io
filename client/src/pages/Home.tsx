@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { ArrowRight, Download, BookOpen, Users, Anchor } from "lucide-react";
 import { Link } from "wouter";
 import heroBg from "@assets/generated_images/clean_spiritual_abstract_geometry_background.png";
-import cvFile from "@assets/Diwakar_D25_1765739404915.pdf";
 
 export default function Home() {
   return (
@@ -47,7 +46,7 @@ export default function Home() {
                   Explore My Journey <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <a href={cvFile} download="Dr_Diwakar_Singh_CV.pdf">
+              <a href="/Dr_Diwakar_Singh_CV.pdf" download="Dr_Diwakar_Singh_CV.pdf">
                 <Button variant="outline" size="lg" className="rounded-full px-8 text-lg h-14 border-primary/20 hover:bg-orange-50 text-primary">
                   Download CV <Download className="ml-2 w-5 h-5" />
                 </Button>
