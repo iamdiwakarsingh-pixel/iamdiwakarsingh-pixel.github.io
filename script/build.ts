@@ -1,9 +1,10 @@
 import { build as esbuild } from "esbuild";
-import { build as viteBuild } from "vite";
+import { build as viteBuild, UserConfig } from "vite";
 import { rm, readFile } from "fs/promises";
+import path from "path";
 
 // server deps to bundle to reduce openat(2) syscalls
-// which helps cold start times
+// ... (leave the allowlist array content as it was, it's just omitted here for brevity) ...
 const allowlist = [
   "@google/generative-ai",
   "axios",
@@ -32,11 +33,19 @@ const allowlist = [
   "zod-validation-error",
 ];
 
+
 async function buildAll() {
   await rm("dist", { recursive: true, force: true });
 
   console.log("building client...");
-  await viteBuild();
+
+  // --- NEW CODE: Import the vite config and use it for the build ---
+  // The 'base' property in your vite.config.ts is now correctly used here.
+  const viteConfigModule = await import(path.resolve(process.cwd(), 'vite.config.ts'));
+  const userConfig: UserConfig = viteConfigModule.default;
+
+  await viteBuild(userConfig); 
+  // ------------------------------------------------------------------
 
   console.log("building server...");
   const pkg = JSON.parse(await readFile("package.json", "utf-8"));
