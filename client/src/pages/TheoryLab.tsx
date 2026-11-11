@@ -1,198 +1,354 @@
 import { Layout } from "@/components/layout";
-import { BookOpen, FileCheck, HelpCircle, Layers, ArrowRight, Download, ExternalLink } from "lucide-react";
+import { useState } from "react";
+import { BookOpen, CheckCircle, FileText, Layers, ExternalLink, Download, AlertCircle } from "lucide-react";
 
-// The 4 commitments defined in your charter
-const COMMITMENTS = [
-  {
-    title: "1. Real Sources Only",
-    desc: "Every post cites established scholarship with complete bibliographic references so you can verify and read the papers directly.",
-  },
-  {
-    title: "2. Rigorously Typed Examples",
-    desc: "Every concept states whether its illustration is Documented empirically, Contested in literature, or Constructed to illustrate.",
-  },
-  {
-    title: "3. Disagreements Shown, Not Smoothed",
-    desc: "Where theorists collide (e.g., Bacharach's falsifiability vs. Weick's imagination), the tension is highlighted rather than glossed over.",
-  },
-  {
-    title: "4. Intellectual Honesty",
-    desc: "Where a seminal paper is dated, context-bound, overstated, or flawed, its analytical boundaries are explicitly called out.",
-  },
-];
+interface WeekPlan {
+  wk: number;
+  tuesday: string;
+  saturday: string;
+  pairing: string;
+  challenges: string;
+}
 
-// The 6 structured blocks of the 24-week curriculum
-const CURRICULUM = [
-  { range: "Weeks 1–4", theme: "You were rejected and nobody told you why" },
-  { range: "Weeks 5–8", theme: "Here is the standard, and what it actually asks" },
-  { range: "Weeks 9–12", theme: "The standard rests on ideas commonly misunderstood" },
-  { range: "Weeks 13–16", theme: "There isn't one standard, your reviewer picked one" },
-  { range: "Weeks 17–20", theme: "Your work will be read by people who are not you" },
-  { range: "Weeks 21–24", theme: "What it all adds up to" },
-];
+interface Act {
+  act: number;
+  title: string;
+  subtitle: string;
+  weeks: WeekPlan[];
+}
 
-// Repository of Posts / Carousels
-const REPOSITORY = [
+const SYLLABUS: Act[] = [
   {
-    id: "post-0",
-    week: "Orientation",
-    track: "Manifesto",
-    title: "The Architecture of a Theoretical Contribution: Start Here",
-    date: "November 2026",
-    summary:
-      "Most research training teaches technique. Far less teaches the intellectual architecture underneath: how concepts are built, what makes an explanation an explanation, and why some contributions change a field while others are forgotten.",
-    keyReferences: [
-      "Davis, M. S. (1971). That's interesting! Philosophy of the Social Sciences, 1, 309–344.",
-      "Kilduff, M. (2007). The top ten reasons why your paper might not be sent out for review. AMR, 32(3), 700–702.",
+    act: 1,
+    title: "ACT 1: You Were Rejected and Nobody Told You Why",
+    subtitle: "Weeks 1–4 • Uncovering desk rejections and the anatomy of contribution",
+    weeks: [
+      {
+        wk: 1,
+        tuesday: "Kilduff (2007) Ten reasons your paper is not sent out for review (AMR)",
+        saturday: "Davis (1971) That’s interesting! (Phil. Soc. Sci.)",
+        pairing: "Two ways work disappears before it is judged: at the editorial gate, and quietly afterwards.",
+        challenges: "1, 3",
+      },
+      {
+        wk: 2,
+        tuesday: "Colquitt & George (2011) Topic choice (AMJ)",
+        saturday: "Sutton & Staw (1995) What theory is not (ASQ)",
+        pairing: "What you choose years earlier, and what you must construct in the theory section.",
+        challenges: "1, 2",
+      },
+      {
+        wk: 3,
+        tuesday: "Grant & Pollock (2011) Setting the hook (AMJ)",
+        saturday: "Whetten (1989) What constitutes a theoretical contribution? (AMR)",
+        pairing: "The first three pages of an introduction, and the four explanatory blocks underneath them.",
+        challenges: "1, 2",
+      },
+      {
+        wk: 4,
+        tuesday: "Barney (2018) Positioning a theory paper (AMR)",
+        saturday: "Weick (1989) Disciplined imagination (AMR)",
+        pairing: "A formula for the introduction, and the generative imagination it must carry.",
+        challenges: "2, 3",
+      },
     ],
-    pdfUrl: "/docs/theory-lab-start-here.pdf",
-    readTime: "8-slide carousel + Essay",
+  },
+  {
+    act: 2,
+    title: "ACT 2: Here Is the Standard, and What It Actually Asks",
+    subtitle: "Weeks 5–8 • Research design, problematization, and falsifiability",
+    weeks: [
+      {
+        wk: 5,
+        tuesday: "Bono & McNamara (2011) Research design (AMJ)",
+        saturday: "Alvesson & Sandberg (2011) Generating questions through problematization (AMR)",
+        pairing: "Designing a study, and finding an assumption worth designing a study for.",
+        challenges: "1",
+      },
+      {
+        wk: 6,
+        tuesday: "Sparrowe & Mayer (2011) Grounding hypotheses (AMJ)",
+        saturday: "Bacharach (1989) Criteria for evaluation (AMR)",
+        pairing: "Where hypotheses come from, and what makes a theory judgeable in principle.",
+        challenges: "2",
+      },
+      {
+        wk: 7,
+        tuesday: "Barney (2018) Theory contributions and the AMR review process (AMR)",
+        saturday: "Van de Ven (1989) Nothing is quite so practical as a good theory (AMR)",
+        pairing: "How the editorial gate works in practice, and what theory is for.",
+        challenges: "1, 4",
+      },
+      {
+        wk: 8,
+        tuesday: "Zhang & Shaw (2012) Crafting methods and results (AMJ)",
+        saturday: "Weick (1995) What theory is not, theorizing is (ASQ)",
+        pairing: "What counts as a finished product, and what counts as the process of doing.",
+        challenges: "2",
+      },
+    ],
+  },
+  {
+    act: 3,
+    title: "ACT 3: The Standard Rests on Ideas Commonly Misunderstood",
+    subtitle: "Weeks 9–12 • Discussion sections, middle-range theory, and doubt as method",
+    weeks: [
+      {
+        wk: 9,
+        tuesday: "Geletkanycz & Tepper (2012) Discussion and implications (AMJ)",
+        saturday: "DiMaggio (1995) Comments on 'What theory is not' (ASQ)",
+        pairing: "Where meaning is synthesized, and who decides what counts as meaning.",
+        challenges: "4",
+      },
+      {
+        wk: 10,
+        tuesday: "Colquitt & Zapata-Phelan (2007) Trends in theory building (AMJ)",
+        saturday: "Merton (1968) On sociological theories of the middle range",
+        pairing: "How the field scores contribution, and the conceptual altitude theory should aim for.",
+        challenges: "2, 3",
+      },
+      {
+        wk: 11,
+        tuesday: "Locke, Golden-Biddle & Feldman (2008) Making doubt generative (Org Sci)",
+        saturday: "Mintzberg (2005) Developing theory about the development of theory",
+        pairing: "Doubt as an active method, and cherishing the anomalies that do not fit.",
+        challenges: "1, 3",
+      },
+      {
+        wk: 12,
+        tuesday: "Makadok, Burton & Barney (2018) Making theory contributions (SMJ)",
+        saturday: "Corley & Gioia (2011) Building theory about theory building (AMR)",
+        pairing: "A concrete procedure for contribution, and the dual tests of originality and utility.",
+        challenges: "2, 4",
+      },
+    ],
+  },
+  {
+    act: 4,
+    title: "ACT 4: There Isn't One Standard; Your Reviewer Picked One",
+    subtitle: "Weeks 13–16 • The pluralist turn, styles of theorizing, and indigenous concepts",
+    weeks: [
+      {
+        wk: 13,
+        tuesday: "Lange & Pfarrer (2017) Sense and structure: core building blocks (AMR)",
+        saturday: "Cornelissen, Höllerer & Seidl (2021) Forms of theorizing (Org Theory)",
+        pairing: "One journal’s blueprint (the 5 Cs), and the plural reality behind it.",
+        challenges: "3, 4",
+      },
+      {
+        wk: 14,
+        tuesday: "Delbridge & Fiss (2013) Styles of theorizing and social organization (AMR)",
+        saturday: "Sandberg & Alvesson (2021) Meanings of theory through typification (JMS)",
+        pairing: "Styles and types: distinct answers to 'which kind of theory is yours?'",
+        challenges: "3",
+      },
+      {
+        wk: 15,
+        tuesday: "Okhuysen & Bonardi (2011) Combining theoretical lenses (AMR)",
+        saturday: "Poole & Van de Ven (1989) Using paradox to build theories (AMR)",
+        pairing: "Borrowing from multiple literatures and embracing productive contradiction.",
+        challenges: "2, 3",
+      },
+      {
+        wk: 16,
+        tuesday: "Barkema, Chen et al. (2015) West meets East: new concepts (AMJ)",
+        saturday: "Weick (1999) Theory construction as disciplined reflexivity (AMR)",
+        pairing: "Whose concepts count as theory, reflexivity, and non-Western epistemologies.",
+        challenges: "3, 4",
+      },
+    ],
+  },
+  {
+    act: 5,
+    title: "ACT 5: Your Work Will Be Read by People Who Are Not You",
+    subtitle: "Weeks 17–20 • Qualitative rigor, process theorizing, and reviewer psychology",
+    weeks: [
+      {
+        wk: 17,
+        tuesday: "Bansal & Corley (2012) Qualitative research (AMJ)",
+        saturday: "Gioia, Corley & Hamilton (2013) Qualitative rigor in inductive research (ORM)",
+        pairing: "What editors ask of qualitative manuscripts, and the rigor built to answer it.",
+        challenges: "4",
+      },
+      {
+        wk: 18,
+        tuesday: "Pratt (2009) Writing and reviewing qualitative research (AMJ)",
+        saturday: "Langley (1999) Strategies for theorizing from process data (AMR)",
+        pairing: "Writing qualitative data so it is credible, and the seven process strategies.",
+        challenges: "2, 4",
+      },
+      {
+        wk: 19,
+        tuesday: "Corley (2016) How editors come to understand theoretical contribution (AMP)",
+        saturday: "Langley & Cloutier (2020) What makes a process contribution? (Org Theory)",
+        pairing: "How judgment forms in an editor's mind when analyzing dynamic phenomena.",
+        challenges: "4",
+      },
+      {
+        wk: 20,
+        tuesday: "Shaw (2012) Responding to reviewers (AMJ)",
+        saturday: "Pfeffer (1993) Barriers to the advance of organizational science (AMR)",
+        pairing: "Surviving the conversation with reviewers, and fields unable to agree on standards.",
+        challenges: "4",
+      },
+    ],
+  },
+  {
+    act: 6,
+    title: "ACT 6: What It All Adds Up To",
+    subtitle: "Weeks 21–24 • Critiques of theory fetishism, cycles of practice, and synthesis",
+    weeks: [
+      {
+        wk: 21,
+        tuesday: "Hambrick (2007) Management’s devotion to theory: too much? (AMJ)",
+        saturday: "Ghoshal (2005) Bad management theories destroying good practices (AMLE)",
+        pairing: "The unintended consequences of theory obsession: the series turning on itself.",
+        challenges: "All",
+      },
+      {
+        wk: 22,
+        tuesday: "Van de Ven & Johnson (2006) Knowledge for theory and practice (AMR)",
+        saturday: "Carlile & Christensen (2005) Cycles of theory building in research",
+        pairing: "Engaged scholarship and the recursive cycle between empirical anomalies and theory.",
+        challenges: "1, 4",
+      },
+      {
+        wk: 23,
+        tuesday: "Fisher & Aguinis (2017) Using theory elaboration (ORM)",
+        saturday: "Shepherd & Suddaby (2017) Theory building: a review and integration (JoM)",
+        pairing: "Concrete methods for theory elaboration, and the grand integration of models.",
+        challenges: "2",
+      },
+      {
+        wk: 24,
+        tuesday: "Eisenhardt (2021) What is the Eisenhardt method, really? (Strat Org)",
+        saturday: "Suddaby (2024) What theory is, what theory was: whence and whither theory",
+        pairing: "A foundational method defending itself after thirty years, and looking forward.",
+        challenges: "All",
+      },
+    ],
   },
 ];
 
 export default function TheoryLab() {
+  const [activeAct, setActiveAct] = useState(1);
+
   return (
     <Layout>
       <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         
-        {/* Hero Section */}
+        {/* HERO TITLE */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-3.5 py-1.5 rounded-full mb-4">
-            <Layers size={14} />
-            <span>Scholar–Curator Initiative</span>
+          <div className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-wider text-[#e26d36] bg-[#e26d36]/10 px-3.5 py-1.5 rounded-full mb-4">
+            SERIES 1 • 24 WEEKS
           </div>
-          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-foreground tracking-tight mb-5">
-            The Theory Lab
+          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-foreground mb-4">
+            Understanding Scholarly Contribution
           </h1>
-          <p className="text-lg sm:text-xl text-muted-foreground font-sans leading-relaxed mb-6">
-            Translating the intellectual architecture of knowledge creation. We bridge five decades of management theory and journal editorial insight into one connected, actionable curriculum.
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+            Most training teaches study design and statistical execution. The Theory Lab teaches the intellectual architecture underneath: how concepts are built, what makes an explanation an explanation, and why papers are desk-rejected.
           </p>
+        </div>
 
-          {/* Publishing Rhythm Badge */}
-          <div className="inline-flex flex-wrap justify-center items-center gap-4 bg-muted/60 border border-border p-3.5 rounded-xl text-sm font-medium text-foreground">
-            <span className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-accent"></span>
-              <strong>Tuesdays:</strong> The Editor’s Desk
-            </span>
-            <span className="hidden sm:inline text-muted-foreground/40">•</span>
-            <span className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-primary"></span>
-              <strong>Saturdays:</strong> The Theory Lab Deep-Dive
-            </span>
+        {/* THE 4 PROMISES LEDGER */}
+        <div className="bg-card border border-border rounded-xl p-6 mb-16 shadow-xs">
+          <h3 className="font-serif font-bold text-lg mb-4 text-foreground">The Scholar–Curator Promise Ledger</h3>
+          <div className="grid sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+            <div className="p-3 bg-muted/40 rounded-lg">
+              <strong>1. Real Sources Only:</strong> Author and year in body; full APA 7 citations on sources cards.
+            </div>
+            <div className="p-3 bg-muted/40 rounded-lg">
+              <strong>2. Typed Examples:</strong> Every case is labeled as <em>Documented</em>, <em>Contested</em>, or <em>Illustrative</em>.
+            </div>
+            <div className="p-3 bg-muted/40 rounded-lg">
+              <strong>3. Disagreements Shown:</strong> When theorists collide (e.g., Bacharach vs. Weick on falsifiability), tension is highlighted.
+            </div>
+            <div className="p-3 bg-muted/40 rounded-lg">
+              <strong>4. Honest Limits:</strong> Outdated, context-bound, or flawed work is explicitly identified as such.
+            </div>
           </div>
         </div>
 
-        {/* The 4 Commitments (Rigor Standards) */}
-        <section className="mb-20">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-serif font-bold text-foreground">The Four Commitments</h2>
-            <p className="text-sm text-muted-foreground mt-1">Every post, carousel, and synthesis is held to this standard.</p>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-5">
-            {COMMITMENTS.map((c, i) => (
-              <div key={i} className="p-6 bg-card border border-border rounded-xl shadow-xs">
-                <h3 className="font-serif font-bold text-base text-foreground mb-2">{c.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+        {/* ACT TABS */}
+        <div className="flex flex-wrap gap-2 mb-8 justify-center">
+          {SYLLABUS.map((act) => (
+            <button
+              key={act.act}
+              onClick={() => setActiveAct(act.act)}
+              className={`px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all ${
+                activeAct === act.act
+                  ? "bg-[#e26d36] text-white shadow-sm"
+                  : "bg-muted text-muted-foreground hover:bg-muted/80"
+              }`}
+            >
+              Act {act.act}: Weeks {act.act * 4 - 3}–{act.act * 4}
+            </button>
+          ))}
+        </div>
 
-        {/* 24-Week Program Roadmap */}
-        <section className="mb-20 bg-muted/30 border border-border rounded-2xl p-6 sm:p-8">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-border/80 gap-3 mb-6">
-            <div>
-              <h2 className="text-2xl font-serif font-bold text-foreground">Series 1: The Shape of the 24 Weeks</h2>
-              <p className="text-sm text-muted-foreground">From initial desk rejection to building defensible theoretical frameworks.</p>
+        {/* ACTIVE ACT CONTENT */}
+        {SYLLABUS.filter((a) => a.act === activeAct).map((act) => (
+          <div key={act.act} className="space-y-6">
+            <div className="border-b border-border pb-4 mb-6">
+              <h2 className="text-2xl font-serif font-bold text-foreground">{act.title}</h2>
+              <p className="text-xs sm:text-sm text-muted-foreground mt-1">{act.subtitle}</p>
             </div>
-            <span className="text-xs font-semibold px-3 py-1 bg-primary text-white rounded-md self-start sm:self-auto">
-              24-Week Program
-            </span>
-          </div>
-          
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {CURRICULUM.map((item, idx) => (
-              <div key={idx} className="bg-card border border-border/60 p-4 rounded-lg flex flex-col justify-between">
-                <span className="text-xs font-mono font-bold text-primary mb-1 block">{item.range}</span>
-                <p className="text-sm font-medium text-foreground leading-snug">{item.theme}</p>
-              </div>
-            ))}
-          </div>
-        </section>
 
-        {/* Active Repository / Editions Feed */}
-        <section>
-          <div className="flex items-center justify-between mb-8 pb-4 border-b border-border">
-            <div>
-              <h2 className="text-2xl font-serif font-bold text-foreground">Editions & Slides Archive</h2>
-              <p className="text-sm text-muted-foreground">Download slide decks, read references, and inspect underlying literature.</p>
-            </div>
-            <BookOpen className="text-muted-foreground hidden sm:block" size={24} />
-          </div>
+            <div className="space-y-4">
+              {act.weeks.map((w) => (
+                <div key={w.wk} className="bg-card border border-border rounded-xl p-5 sm:p-6 shadow-xs">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-xs font-mono font-bold text-[#e26d36] bg-[#e26d36]/10 px-2.5 py-1 rounded">
+                      Week {w.wk}
+                    </span>
+                    <span className="text-[11px] font-mono text-muted-foreground">
+                      Challenge Focus: Pillar(s) {w.challenges}
+                    </span>
+                  </div>
 
-          <div className="space-y-8">
-            {REPOSITORY.map((post) => (
-              <article
-                key={post.id}
-                className="bg-card border border-border rounded-2xl p-6 sm:p-8 shadow-xs hover:border-primary/40 transition-colors"
-              >
-                <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-                  <span className="text-xs font-bold font-mono text-accent bg-accent/10 px-2.5 py-1 rounded">
-                    {post.track} • {post.week}
-                  </span>
-                  <span className="text-xs text-muted-foreground font-medium">{post.date}</span>
-                </div>
+                  <div className="grid md:grid-cols-2 gap-4 mb-4">
+                    <div className="p-3.5 bg-amber-500/5 border border-amber-600/20 rounded-lg">
+                      <span className="text-[10px] font-mono font-bold text-amber-700 uppercase block mb-1">
+                        Tuesday • The Editor's Desk
+                      </span>
+                      <p className="text-xs font-semibold text-foreground">{w.tuesday}</p>
+                    </div>
 
-                <h3 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-4">
-                  {post.title}
-                </h3>
+                    <div className="p-3.5 bg-slate-500/5 border border-slate-600/20 rounded-lg">
+                      <span className="text-[10px] font-mono font-bold text-slate-700 uppercase block mb-1">
+                        Saturday • The Theory Lab
+                      </span>
+                      <p className="text-xs font-semibold text-foreground">{w.saturday}</p>
+                    </div>
+                  </div>
 
-                <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-6">
-                  {post.summary}
-                </p>
+                  <p className="text-xs sm:text-sm text-muted-foreground italic mb-4">
+                    <strong>The Pairing:</strong> {w.pairing}
+                  </p>
 
-                {/* Primary Sources / Reading Box */}
-                <div className="bg-muted/40 border border-border/70 rounded-xl p-4 mb-6">
-                  <h4 className="text-xs font-semibold uppercase tracking-wider text-foreground mb-2 flex items-center gap-1.5">
-                    <FileCheck size={14} className="text-primary" />
-                    Essential Sources Examined
-                  </h4>
-                  <ul className="text-xs sm:text-sm text-muted-foreground space-y-1.5 font-mono">
-                    {post.keyReferences.map((ref, rIdx) => (
-                      <li key={rIdx} className="leading-relaxed pl-3 border-l-2 border-primary/40">
-                        {ref}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Actions */}
-                <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-border/60">
-                  <span className="text-xs text-muted-foreground font-medium">{post.readTime}</span>
-                  
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-end gap-3 pt-3 border-t border-border/60">
                     <a
-                      href={post.pdfUrl}
+                      href={`/docs/theory-lab/W${w.wk}_CAROUSEL.pdf`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-foreground hover:text-primary transition-colors"
+                      className="text-xs font-medium text-primary hover:underline inline-flex items-center gap-1"
                     >
-                      View Slides <ExternalLink size={14} />
-                    </a>
-                    <a
-                      href={post.pdfUrl}
-                      download
-                      className="inline-flex items-center gap-1.5 bg-primary text-white text-xs sm:text-sm font-medium px-4 py-2 rounded-lg hover:opacity-90 transition-opacity"
-                    >
-                      <Download size={14} />
-                      Download PDF
+                      View Slides & PDF <ExternalLink size={12} />
                     </a>
                   </div>
                 </div>
-              </article>
-            ))}
+              ))}
+            </div>
           </div>
-        </section>
+        ))}
+
+        {/* UPCOMING SERIES ATTACHMENT */}
+        <div className="mt-16 pt-8 border-t border-border text-center">
+          <h4 className="font-serif font-bold text-foreground text-sm mb-2">The Extended Curriculum</h4>
+          <p className="text-xs text-muted-foreground max-w-xl mx-auto leading-relaxed">
+            Series 1 is the entry point. Upcoming: <strong>Series 2:</strong> Foundations of Research Thinking • <strong>Series 3:</strong> Theory Development & Design • <strong>Series 4:</strong> Research Traditions and Indian Epistemology.
+          </p>
+        </div>
 
       </div>
     </Layout>
