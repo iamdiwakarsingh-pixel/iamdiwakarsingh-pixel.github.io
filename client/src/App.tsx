@@ -1,4 +1,4 @@
-import { Switch, Route, Router } from "wouter"; // Ensure Router is imported from 'wouter'
+import { Switch, Route, Router } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -10,8 +10,8 @@ import Research from "@/pages/Research";
 import Teaching from "@/pages/Teaching";
 import Projects from "@/pages/Projects";
 import Contact from "@/pages/Contact";
+import TheoryLab from "@/pages/TheoryLab"; // Added Theory Lab page
 
-// No changes needed in this function definition
 function RouterComponent() { 
   return (
     <Switch>
@@ -20,6 +20,7 @@ function RouterComponent() {
       <Route path="/research" component={Research} />
       <Route path="/teaching" component={Teaching} />
       <Route path="/projects" component={Projects} />
+      <Route path="/theory-lab" component={TheoryLab} />
       <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
     </Switch>
@@ -32,8 +33,8 @@ function App() {
       <TooltipProvider>
         <Toaster />
         
-        {/* WRAP THE ROUTER WITH THE BASEPATH CONFIGURATION HERE */}
-        <Router basepath="/The-Theory-Lab">
+        {/* Default basepath for user site on GitHub Pages */}
+        <Router basepath="">
           <RouterComponent />
         </Router>
 

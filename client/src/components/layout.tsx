@@ -10,6 +10,7 @@ const navItems = [
   { label: "Teaching", href: "/teaching" },
   { label: "Research", href: "/research" },
   { label: "Projects", href: "/projects" },
+  { label: "The Theory Lab", href: "/theory-lab" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -121,6 +122,8 @@ export function Footer() {
             <li><Link href="/about"><a className="text-white/70 hover:text-accent transition-colors">About</a></Link></li>
             <li><Link href="/research"><a className="text-white/70 hover:text-accent transition-colors">Research</a></Link></li>
             <li><Link href="/teaching"><a className="text-white/70 hover:text-accent transition-colors">Teaching</a></Link></li>
+            <li><Link href="/projects"><a className="text-white/70 hover:text-accent transition-colors">Projects</a></Link></li>
+            <li><Link href="/theory-lab"><a className="text-white/70 hover:text-accent transition-colors">The Theory Lab</a></Link></li>
           </ul>
         </div>
         <div>
