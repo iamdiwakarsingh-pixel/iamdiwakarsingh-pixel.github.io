@@ -238,17 +238,27 @@ export default function TheoryLab() {
       <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         
         {/* HERO TITLE */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-wider text-[#e26d36] bg-[#e26d36]/10 px-3.5 py-1.5 rounded-full mb-4">
-            SERIES 1 • 24 WEEKS
-          </div>
-          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-foreground mb-4">
-            Understanding Scholarly Contribution
-          </h1>
-          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Most training teaches study design and statistical execution. The Theory Lab teaches the intellectual architecture underneath: how concepts are built, what makes an explanation an explanation, and why papers are desk-rejected.
-          </p>
-        </div>
+        <div className="flex flex-wrap items-center justify-between gap-4 pt-3 border-t border-border/60">
+                    {/* Left Link: Tuesday (The Editor's Desk) */}
+                    <a
+                      href={`/docs/theory-lab/W${w.wk}_Tuesday_ED.pdf`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-medium text-amber-700 hover:underline inline-flex items-center gap-1"
+                    >
+                      View Tuesday Slides & PDF <ExternalLink size={12} />
+                    </a>
+
+                    {/* Right Link: Saturday (The Theory Lab) */}
+                    <a
+                      href={`/docs/theory-lab/W${w.wk}_Saturday_TL.pdf`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-medium text-primary hover:underline inline-flex items-center gap-1"
+                    >
+                      View Saturday Slides & PDF <ExternalLink size={12} />
+                    </a>
+                  </div>
 
         {/* THE 4 PROMISES LEDGER */}
         <div className="bg-card border border-border rounded-xl p-6 mb-16 shadow-xs">
