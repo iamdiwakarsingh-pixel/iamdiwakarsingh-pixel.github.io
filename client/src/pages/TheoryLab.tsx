@@ -333,7 +333,7 @@ export default function TheoryLab() {
                   {/* Left (Tuesday) and Right (Saturday) Slides & PDF Links */}
                   <div className="flex flex-wrap items-center justify-between gap-4 pt-3 border-t border-border/60">
                     <a
-                      href={`/docs/theory-lab/W${w.wk}_Tuesday_ED.pdf`}
+                      href={`/theory-lab/W${w.wk}_Tuesday_ED.pdf`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-xs font-medium text-amber-700 hover:underline inline-flex items-center gap-1"
@@ -342,7 +342,7 @@ export default function TheoryLab() {
                     </a>
 
                     <a
-                      href={`/docs/theory-lab/W${w.wk}_Saturday_TL.pdf`}
+                      href={`/theory-lab/W${w.wk}_Saturday_TL.pdf`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-xs font-medium text-primary hover:underline inline-flex items-center gap-1"
