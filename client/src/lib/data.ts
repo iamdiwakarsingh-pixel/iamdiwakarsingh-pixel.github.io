@@ -19,7 +19,7 @@ export const personalInfo = {
   socials: {
     googleScholar: "https://scholar.google.com/citations?user=MhNKED8AAAAJ&hl=en",
     researchGate: "https://www.researchgate.net/profile/Diwakar-Singh-11",
-    linkedIn: "https://www.linkedin.com/in/dr-diwakar-singh-5b6846171/",
+    linkedIn: "https://www.linkedin.com/in/dr-diwakar-singh-phd-5b6846171/",
     orcid: "0000-0002-3505-2324",
     scopus: "58109430700"
   },
