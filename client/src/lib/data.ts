@@ -11,6 +11,12 @@ import {
   Layers
 } from "lucide-react";
 
+export interface PublicationItem {
+  citation: string;
+  doiUrl?: string;
+  pdfUrl?: string;
+}
+
 export const personalInfo = {
   name: "Dr. Diwakar Singh",
   title: "Assistant Professor, EDII | Scholar-Curator, The Theory Lab | IAF Veteran",
@@ -111,29 +117,82 @@ export const researchInterests = [
   { title: "Indian Knowledge Systems", icon: Globe }
 ];
 
-export const publications = {
+export const publications: {
+  journalArticles: PublicationItem[];
+  proceedings: PublicationItem[];
+  bookChapters: string[];
+} = {
   journalArticles: [
-    "Navigating Paradox through Jugaad: Sustainability Practices in Indian Social Enterprises. Journal of Social Entrepreneurship (2025).",
-    "Lokasamgraha: An Indigenous Construct for Social Entrepreneurship. IIMB Management Review (2023).",
-    "Expanding Horizons of Social Entrepreneurship Through Indigenous Research. Journal of Social Entrepreneurship (2023).",
-    "Spirituality in Social Entrepreneurship. Social Enterprise Journal (2024).",
-    "Organizational Culture: A Longitudinal Study of a Public Sector Bank. Parikalpana (2023).",
-    "Employee Retention Review. IJSRST (2019).",
-    "Managing Cross-cultural Diversity. IOSR-JMCE (2014)."
+    {
+      citation:
+        "Navigating Paradox through Jugaad: Sustainability Practices in Indian Social Enterprises. Journal of Social Entrepreneurship (2025) (ABDC B, Scopus).",
+      doiUrl: "https://doi.org/10.1080/19420676.2025.2584838",
+    },
+    {
+      citation:
+        "Lokasamgraha: An Indigenous Construct for Social Entrepreneurship. IIMB Management Review (2023) (ABDC B, Scopus).",
+      doiUrl: "https://doi.org/10.1016/j.iimb.2023.04.005",
+    },
+    {
+      citation:
+        "Expanding the Horizons of Social Entrepreneurship Through Indigenous Research: A Review and Research Agenda. Journal of Social Entrepreneurship (2023) (ABDC B, Scopus).",
+      doiUrl: "https://doi.org/10.1080/19420676.2023.2178484",
+    },
+    {
+      citation:
+        "Spirituality in Social Entrepreneurship: An Ethical Approach to Sustainability. Social Enterprise Journal (2024) (ABDC C, Scopus).",
+      doiUrl: "https://doi.org/10.1108/SEJ-05-2024-0083",
+    },
+    {
+      citation:
+        "Organizational Culture: A Longitudinal Study of a Public Sector Bank. Parikalpana – KIIT Journal of Management (2023) (UGC-Care).",
+      doiUrl: "https://doi.org/10.23862/kiit-parikalpana/2023/v19/i2/223461",
+      pdfUrl: "/docs/Organizational-Culture%20paper%20Parikalpana.pdf",
+    },
+    {
+      citation:
+        "A Literature Review on Employee Retention. International Journal of Science Research Science and Technology (2019).",
+      doiUrl: "https://doi.org/10.32628/IJSRST195463",
+      pdfUrl: "/docs/5095.pdf",
+    },
+    {
+      citation: "Managing Cross-cultural Diversity. IOSR-JMCE (2014).",
+      pdfUrl: "/docs/IOSRMG002.pdf",
+    },
   ],
   proceedings: [
-    "Community Engagement as Moral Governance: A Process Model of Value Co-creation in Social Enterprise. Academy of Management Proceedings, 2026",
-    "Meditation and the Making of Academic Identity: A Collaborative Autoethnography Across Contemplative Traditions. Academy of Management Proceedings, 2026",
-    "What Makes Social Enterprises Unique? Examining Sustainability Through a Cultural Lens, Academy of Management Proceedings, Aug 2025",
-    "Exploring the role of Spirituality in Social Entrepreneurship using sustainability lens, Academy of Management Proceedings, Aug 2023",
-    "Lokasamgraha: An Indigenous Construct for Social Entrepreneurship from India, Academy of Management Proceedings, Aug 2022"
+    {
+      citation:
+        "Community Engagement as Moral Governance: A Process Model of Value Co-creation in Social Enterprise. Academy of Management Proceedings, 2026.",
+      doiUrl: "https://journals.aom.org/doi/10.5465/AMPROC.2026.21389abstract",
+    },
+    {
+      citation:
+        "Meditation and the Making of Academic Identity: A Collaborative Autoethnography Across Contemplative Traditions. Academy of Management Proceedings, 2026.",
+      doiUrl: "https://journals.aom.org/doi/abs/10.5465/AMPROC.2026.16966abstract",
+    },
+    {
+      citation:
+        "What Makes Social Enterprises Unique? Examining Sustainability Through a Cultural Lens. Academy of Management Proceedings, Aug 2025.",
+      doiUrl: "https://journals.aom.org/doi/abs/10.5465/AMPROC.2025.16284abstract",
+    },
+    {
+      citation:
+        "Exploring the role of Spirituality in Social Entrepreneurship using sustainability lens. Academy of Management Proceedings, Aug 2023.",
+      doiUrl: "http://dx.doi.org/10.5465/AMPROC.2023.19371abstract",
+    },
+    {
+      citation:
+        "Lokasamgraha: An Indigenous Construct for Social Entrepreneurship from India. Academy of Management Proceedings, Aug 2022.",
+      doiUrl: "http://dx.doi.org/10.5465/AMBPP.2022.17427abstract",
+    },
   ],
   bookChapters: [
     "Talent Acquisition and Retention: Issues and Challenges. (2014)",
     "Spirituality at Workplace: Managing Millennials. (2019)",
     "Philosophical Underpinnings of Research Paradigms. (2019)",
-    "Disaster Management Education in India. (2014)"
-  ]
+    "Disaster Management Education in India. (2014)",
+  ],
 };
 
 export const teaching = {
@@ -206,7 +265,7 @@ export const awards = {
 
 export const academicServices = [
   "Reviewed 40+ articles for Academy of Management Entrepreneurship and Management Spirituality and Religion interest groups",
-  "Reviewed 20+ articles for Journals including Polar Record Journal, FIIB Management Revew, Voluntas, International Journal of Human Resources Development and Management, and Journal of Entrepreneurship",
+  "Reviewed 20+ articles for Journals including Polar Record Journal, FIIB Management Review, Voluntas, International Journal of Human Resources Development and Management, and Journal of Entrepreneurship",
   "Program Coordinator, PGDM (Entrepreneurship), EDII (2025–)",
   "Led National Entrepreneurship Day Mega Event, Leh (2025)",
   "Designed multi-semester entrepreneurship curriculum for Acharya Institute, Bangalore",

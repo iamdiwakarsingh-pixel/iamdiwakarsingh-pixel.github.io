@@ -1,10 +1,9 @@
 import { Layout } from "@/components/layout";
 import { motion } from "framer-motion";
-import { researchInterests, publications, projects } from "@/lib/data";
+import { researchInterests, publications } from "@/lib/data";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { FileText, Book, Presentation } from "lucide-react";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { FileText, Book, Presentation, ExternalLink, Download } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Research() {
@@ -36,7 +35,7 @@ export default function Research() {
                 <li>What cultural mechanisms enable frugality without compromising quality or dignity?</li>
                 <li>How do indigenous constructs like lokasamgraha influence organizational behavior?</li>
                 <li>Can spirituality be a legitimate, ethical, and practical resource for leadership?</li>
-                <li>How do individuals and organizations enact hybridity — blending business logic with compassion and community wisdom?</li>
+                <li>How do individuals and organizations enact hybridity, blending business logic with compassion and community wisdom?</li>
               </ul>
             </div>
 
@@ -44,7 +43,7 @@ export default function Research() {
             <div>
               <h2 className="text-3xl font-bold text-secondary mb-6">Research Approach</h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                My work is qualitative, interpretive, and deeply ethnographic. I spend time in the field — in hospitals, villages, counseling rooms, training centers — observing how people live their values through daily actions.
+                My work is qualitative, interpretive, and deeply ethnographic. I spend time in the field, in hospitals, villages, counseling rooms, and training centers, observing how people live their values through daily actions.
               </p>
               <div className="bg-white p-6 rounded-xl border border-border">
                 <p className="text-lg font-medium text-secondary mb-4">This approach helps uncover:</p>
@@ -80,11 +79,11 @@ export default function Research() {
 
             {/* Vision */}
             <div className="text-center bg-secondary text-white p-12 rounded-3xl relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-               <div className="relative z-10">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+              <div className="relative z-10">
                 <h2 className="text-3xl font-bold text-accent mb-6">My Vision as a Scholar</h2>
                 <p className="text-xl font-light leading-relaxed text-white/90">
-                  I aspire to build knowledge that is indigenous yet globally relevant, empirical yet deeply human, theoretical yet accessible, spiritual yet academically rigorous. Ultimately, I hope my work contributes to creating enterprises that are not only successful — but soulful.
+                  I aspire to build knowledge that is indigenous yet globally relevant, empirical yet deeply human, theoretical yet accessible, spiritual yet academically rigorous. Ultimately, I hope my work contributes to creating enterprises that are not only successful, but soulful.
                 </p>
               </div>
             </div>
@@ -92,11 +91,9 @@ export default function Research() {
             {/* Separator */}
             <div className="w-full h-px bg-border my-16" />
 
-            {/* Original Research Content Restored Below */}
-            
             {/* Header */}
             <div className="text-center bg-gradient-spiritual p-12 rounded-3xl mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-6">Research & Scholarship</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-6">Research &amp; Scholarship</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Exploring the intersections of spirituality, indigenous wisdom, and modern organizational management.
               </p>
@@ -132,6 +129,7 @@ export default function Research() {
                     <TabsTrigger value="chapters" className="rounded-full px-6 data-[state=active]:bg-primary data-[state=active]:text-white">Book Chapters</TabsTrigger>
                   </TabsList>
                   
+                  {/* Peer-Reviewed Journals */}
                   <TabsContent value="journals" className="space-y-4">
                     {publications.journalArticles.map((pub, i) => (
                       <div 
@@ -140,20 +138,77 @@ export default function Research() {
                       >
                         <div className="flex gap-4">
                           <span className="text-primary font-bold text-xl opacity-50 shrink-0">{i + 1}.</span>
-                          <p className="text-foreground/90 leading-relaxed text-lg">{pub}</p>
+                          <div className="space-y-3">
+                            <p className="text-foreground/90 leading-relaxed text-lg">{pub.citation}</p>
+                            {(pub.doiUrl || pub.pdfUrl) && (
+                              <div className="flex flex-wrap items-center gap-3 pt-1 font-sans">
+                                {pub.doiUrl && (
+                                  <a
+                                    href={pub.doiUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md bg-orange-50 text-primary border border-orange-200 hover:bg-primary hover:text-white transition-colors"
+                                  >
+                                    DOI / Publisher <ExternalLink className="w-3.5 h-3.5" />
+                                  </a>
+                                )}
+                                {pub.pdfUrl && (
+                                  <a
+                                    href={pub.pdfUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md bg-slate-50 text-secondary border border-slate-200 hover:bg-secondary hover:text-white transition-colors"
+                                  >
+                                    View PDF <Download className="w-3.5 h-3.5" />
+                                  </a>
+                                )}
+                              </div>
+                            )}
+                          </div>
                         </div>
                       </div>
                     ))}
                   </TabsContent>
                   
+                  {/* Academy of Management Proceedings */}
                   <TabsContent value="proceedings" className="space-y-4">
                     {publications.proceedings.map((pub, i) => (
-                      <div key={i} className="p-6 bg-white rounded-xl border border-border shadow-sm">
-                        <p className="text-foreground/90 leading-relaxed text-lg">{pub}</p>
+                      <div key={i} className="p-6 bg-white rounded-xl border border-border shadow-sm hover:border-primary/30 transition-colors">
+                        <div className="flex gap-4">
+                          <span className="text-primary font-bold text-xl opacity-50 shrink-0">{i + 1}.</span>
+                          <div className="space-y-3">
+                            <p className="text-foreground/90 leading-relaxed text-lg">{pub.citation}</p>
+                            {(pub.doiUrl || pub.pdfUrl) && (
+                              <div className="flex flex-wrap items-center gap-3 pt-1 font-sans">
+                                {pub.doiUrl && (
+                                  <a
+                                    href={pub.doiUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md bg-orange-50 text-primary border border-orange-200 hover:bg-primary hover:text-white transition-colors"
+                                  >
+                                    AOM Proceedings / DOI <ExternalLink className="w-3.5 h-3.5" />
+                                  </a>
+                                )}
+                                {pub.pdfUrl && (
+                                  <a
+                                    href={pub.pdfUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md bg-slate-50 text-secondary border border-slate-200 hover:bg-secondary hover:text-white transition-colors"
+                                  >
+                                    View PDF <Download className="w-3.5 h-3.5" />
+                                  </a>
+                                )}
+                              </div>
+                            )}
+                          </div>
+                        </div>
                       </div>
                     ))}
                   </TabsContent>
                   
+                  {/* Book Chapters */}
                   <TabsContent value="chapters" className="space-y-4">
                     {publications.bookChapters.map((pub, i) => (
                       <div key={i} className="p-6 bg-white rounded-xl border border-border shadow-sm">
