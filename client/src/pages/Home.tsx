@@ -41,7 +41,7 @@ export default function Home() {
           <div className="relative inline-block mb-8">
             <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-white shadow-xl mx-auto ring-1 ring-border">
               <img
-                src="/diwakar.jpg"
+                src="/diwakar-profile.jpg"
                 alt="Dr. Diwakar Singh"
                 className="w-full h-full object-cover"
                 onError={(e) => {
@@ -75,7 +75,7 @@ export default function Home() {
               </a>
             </Link>
             <a
-              href="/docs/CV_Diwakar_Singh.pdf"
+              href="/docs/Dr_Diwakar_Singh_CV.pdf"
               download
               className="inline-flex items-center gap-2 border border-border bg-card hover:bg-muted text-foreground px-6 py-3 rounded-lg font-medium transition-colors"
             >
