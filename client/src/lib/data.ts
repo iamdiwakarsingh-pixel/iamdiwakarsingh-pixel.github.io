@@ -136,4 +136,79 @@ export const publications = {
   ]
 };
 
-export const teaching =
+export const teaching = {
+  entrepreneurship: [
+    "Innovation & Entrepreneurship (AUD, 2021-22)",
+    "Innovation & Entrepreneurship (BML Munjal University, 2024)",
+    "Innovation and Business Opportunities (AUD, 2024)",
+    "Design Thinking & Innovation Management (EDII, 2025)"
+  ],
+  obHrm: [
+    "Diversity & Intercultural Management (2024)",
+    "Leadership & Change (2024)",
+    "Positive Psychology (BBA, 2024)"
+  ],
+  research: [
+    "Business Statistics & Analytics for Decision Making (EDII, 2025)"
+  ],
+  executive: [
+    "Business Model Canvas & Opportunity Identification: Entrepreneurship Immersion Program",
+    "Communication & Presentation Skills (TN EDII Students)",
+    "Team Building (Khadi and Village Industries Commission Officials)",
+    "HR & Talent Management (Farmer Producer Groups)",
+    "Sustainability Frameworks - Indian Technical and Economic Cooperation (ITEC) International Program"
+  ]
+};
+
+export const projects = [
+  {
+    title: "The Theory Lab",
+    role: "Founder & Scholar-Curator",
+    description: "A structured 24-week scholarly curriculum bridging five decades of management theory and journal editorial standards for doctoral researchers and early-career faculty."
+  },
+  {
+    title: "RAMP Ladakh",
+    role: "Strategic Execution Lead",
+    description: "Leading SPIU-level strategic execution, stakeholder coordination, entrepreneurship ecosystem development for the UT of Ladakh."
+  },
+  {
+    title: "Enterprising Ladakh Initiative",
+    role: "Core Team",
+    description: "Working with the Department of Higher Education to build student and youth entrepreneurship pathways."
+  },
+  {
+    title: "Khadi and Gramodyog Vikas Yojana",
+    role: "Evaluator",
+    description: "Led proposal and research design for Evaluation Study of Khadi and Gramodyog Vikas Yojana."
+  },
+  {
+    title: "ATAL FDP - Social Enterprise Management",
+    role: "Designer",
+    description: "Designed and proposed a national faculty development program (approved by AICTE)."
+  }
+];
+
+export const awards = {
+  academic: [
+    "PhD shortlisted for UGC Excellence Citation Award (2025)",
+    "Best Paper Award (EDII Biennial, 2025)",
+    "Best Reviewer Award (AOM, 2024)",
+    "Best Paper - Indian Culture & Philosophy Track, INDAM (2022)",
+    "SAMS Bursary - Journal of Management Studies Workshop (FIU, USA)",
+    "International Travel Grant - AUD Delhi"
+  ],
+  military: [
+    "Commendation by AOC-in-C",
+    "Best Air Warrior (twice)",
+    "Flight Safety Award"
+  ]
+};
+
+export const academicServices = [
+  "Reviewed 40+ articles for Academy of Management Entrepreneurship and Management Spirituality and Religion interest groups",
+  "Reviewed 20+ articles for Journals including Polar Record Journal, FIIB Management Revew, Voluntas, International Journal of Human Resources Development and Management, and Journal of Entrepreneurship",
+  "Program Coordinator, PGDM (Entrepreneurship), EDII (2025–)",
+  "Led National Entrepreneurship Day Mega Event, Leh (2025)",
+  "Designed multi-semester entrepreneurship curriculum for Acharya Institute, Bangalore",
+  "Secretary, Maa Saraswati Educational Trust, Bihar"
+];
