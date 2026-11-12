@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout";
 import { useState } from "react";
-import { BookOpen, CheckCircle, FileText, Layers, ExternalLink, Download, AlertCircle } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 interface WeekPlan {
   wk: number;
@@ -238,27 +238,17 @@ export default function TheoryLab() {
       <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         
         {/* HERO TITLE */}
-        <div className="flex flex-wrap items-center justify-between gap-4 pt-3 border-t border-border/60">
-                    {/* Left Link: Tuesday (The Editor's Desk) */}
-                    <a
-                      href={`/docs/theory-lab/W${w.wk}_Tuesday_ED.pdf`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs font-medium text-amber-700 hover:underline inline-flex items-center gap-1"
-                    >
-                      View Tuesday Slides & PDF <ExternalLink size={12} />
-                    </a>
-
-                    {/* Right Link: Saturday (The Theory Lab) */}
-                    <a
-                      href={`/docs/theory-lab/W${w.wk}_Saturday_TL.pdf`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs font-medium text-primary hover:underline inline-flex items-center gap-1"
-                    >
-                      View Saturday Slides & PDF <ExternalLink size={12} />
-                    </a>
-                  </div>
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-wider text-[#e26d36] bg-[#e26d36]/10 px-3.5 py-1.5 rounded-full mb-4">
+            SERIES 1 • 24 WEEKS
+          </div>
+          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-foreground mb-4">
+            Understanding Scholarly Contribution
+          </h1>
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+            Most training teaches study design and statistical execution. The Theory Lab teaches the intellectual architecture underneath: how concepts are built, what makes an explanation an explanation, and why papers are desk-rejected.
+          </p>
+        </div>
 
         {/* THE 4 PROMISES LEDGER */}
         <div className="bg-card border border-border rounded-xl p-6 mb-16 shadow-xs">
@@ -281,19 +271,23 @@ export default function TheoryLab() {
 
         {/* ACT TABS */}
         <div className="flex flex-wrap gap-2 mb-8 justify-center">
-          {SYLLABUS.map((act) => (
-            <button
-              key={act.act}
-              onClick={() => setActiveAct(act.act)}
-              className={`px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all ${
-                activeAct === act.act
-                  ? "bg-[#e26d36] text-white shadow-sm"
-                  : "bg-muted text-muted-foreground hover:bg-muted/80"
-              }`}
-            >
-              Act {act.act}: Weeks {act.act * 4 - 3}–{act.act * 4}
-            </button>
-          ))}
+          {SYLLABUS.map((act) => {
+            const startWeek = (act.act - 1) * 4 + 1;
+            const endWeek = act.act * 4;
+            return (
+              <button
+                key={act.act}
+                onClick={() => setActiveAct(act.act)}
+                className={`px-4 py-2 rounded-lg text-xs font-mono font-semibold transition-all ${
+                  activeAct === act.act
+                    ? "bg-[#e26d36] text-white shadow-sm"
+                    : "bg-muted text-muted-foreground hover:bg-muted/80"
+                }`}
+              >
+                Act {act.act}: Weeks {startWeek}–{endWeek}
+              </button>
+            );
+          })}
         </div>
 
         {/* ACTIVE ACT CONTENT */}
@@ -336,14 +330,24 @@ export default function TheoryLab() {
                     <strong>The Pairing:</strong> {w.pairing}
                   </p>
 
-                  <div className="flex items-center justify-end gap-3 pt-3 border-t border-border/60">
+                  {/* Left (Tuesday) and Right (Saturday) Slides & PDF Links */}
+                  <div className="flex flex-wrap items-center justify-between gap-4 pt-3 border-t border-border/60">
                     <a
-                      href={`/docs/theory-lab/W${w.wk}_CAROUSEL.pdf`}
+                      href={`/docs/theory-lab/W${w.wk}_Tuesday_ED.pdf`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-medium text-amber-700 hover:underline inline-flex items-center gap-1"
+                    >
+                      View Tuesday Slides & PDF <ExternalLink size={12} />
+                    </a>
+
+                    <a
+                      href={`/docs/theory-lab/W${w.wk}_Saturday_TL.pdf`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-xs font-medium text-primary hover:underline inline-flex items-center gap-1"
                     >
-                      View Slides & PDF <ExternalLink size={12} />
+                      View Saturday Slides & PDF <ExternalLink size={12} />
                     </a>
                   </div>
                 </div>
