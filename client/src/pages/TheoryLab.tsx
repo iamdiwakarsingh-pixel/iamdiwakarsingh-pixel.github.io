@@ -1,4 +1,6 @@
 import { Layout } from "@/components/layout";
+import { EDITIONS } from "@/lib/editions";
+import { Link } from "wouter";
 import { useState, useEffect } from "react";
 import {
   ExternalLink,
@@ -9,6 +11,7 @@ import {
   Check,
   Lock,
   Sparkles,
+  FileText,
 } from "lucide-react";
 
 interface WeekPlan {
@@ -617,45 +620,68 @@ export default function TheoryLab() {
                       )}
                     </div>
 
-                    {/* Left (Tuesday) and Right (Saturday) Slides & PDF Links */}
-                    <div className="flex flex-wrap items-center justify-between gap-4 pt-3 border-t border-border/60">
-                      {tueReady ? (
-                        <a
-                          href={`/theory-lab/W${w.wk}_Tuesday_ED.pdf`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-xs font-medium text-amber-700 hover:underline inline-flex items-center gap-1"
-                        >
-                          View Tuesday Slides &amp; PDF <ExternalLink size={12} />
-                        </a>
-                      ) : (
-                        <span
-                          className="text-xs font-medium text-muted-foreground/60 inline-flex items-center gap-1.5 cursor-not-allowed select-none"
-                          title="Scheduled for upcoming release"
-                        >
-                          <Lock size={12} /> Tuesday Slides (Scheduled)
-                        </span>
-                      )}
+                    {/* Left (Tuesday) and Right (Saturday) Essay + PDF Links */}
+                    <div className="grid sm:grid-cols-2 gap-4 pt-3 border-t border-border/60">
+                      {/* Tuesday Actions */}
+                      <div className="flex flex-wrap items-center gap-3">
+                        {EDITIONS.some((e) => e.slug === `w${w.wk}-tuesday`) && (
+                          <Link
+                            href={`/theory-lab/w${w.wk}-tuesday`}
+                            className="text-xs font-semibold text-amber-800 bg-amber-50 hover:bg-amber-100 border border-amber-200 px-2.5 py-1 rounded-md inline-flex items-center gap-1 transition-colors"
+                          >
+                            <FileText size={12} /> Read Essay
+                          </Link>
+                        )}
 
-                      {satReady ? (
-                        <a
-                          href={`/theory-lab/W${w.wk}_Saturday_TL.pdf`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-xs font-medium text-primary hover:underline inline-flex items-center gap-1"
-                        >
-                          View Saturday Slides &amp; PDF <ExternalLink size={12} />
-                        </a>
-                      ) : (
-                        <span
-                          className="text-xs font-medium text-muted-foreground/60 inline-flex items-center gap-1.5 cursor-not-allowed select-none"
-                          title="Scheduled for upcoming release"
-                        >
-                          <Lock size={12} /> Saturday Slides (Scheduled)
-                        </span>
-                      )}
+                        {tueReady ? (
+                          <a
+                            href={`/theory-lab/W${w.wk}_Tuesday_ED.pdf`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs font-medium text-amber-700 hover:underline inline-flex items-center gap-1"
+                          >
+                            Tuesday PDF <ExternalLink size={12} />
+                          </a>
+                        ) : (
+                          <span
+                            className="text-xs font-medium text-muted-foreground/60 inline-flex items-center gap-1.5 cursor-not-allowed select-none"
+                            title="Scheduled for upcoming release"
+                          >
+                            <Lock size={12} /> Tuesday (Scheduled)
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Saturday Actions */}
+                      <div className="flex flex-wrap items-center sm:justify-end gap-3">
+                        {EDITIONS.some((e) => e.slug === `w${w.wk}-saturday`) && (
+                          <Link
+                            href={`/theory-lab/w${w.wk}-saturday`}
+                            className="text-xs font-semibold text-primary bg-orange-50 hover:bg-orange-100 border border-orange-200 px-2.5 py-1 rounded-md inline-flex items-center gap-1 transition-colors"
+                          >
+                            <FileText size={12} /> Read Essay
+                          </Link>
+                        )}
+
+                        {satReady ? (
+                          <a
+                            href={`/theory-lab/W${w.wk}_Saturday_TL.pdf`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs font-medium text-primary hover:underline inline-flex items-center gap-1"
+                          >
+                            Saturday PDF <ExternalLink size={12} />
+                          </a>
+                        ) : (
+                          <span
+                            className="text-xs font-medium text-muted-foreground/60 inline-flex items-center gap-1.5 cursor-not-allowed select-none"
+                            title="Scheduled for upcoming release"
+                          >
+                            <Lock size={12} /> Saturday (Scheduled)
+                          </span>
+                        )}
+                      </div>
                     </div>
-                  </div>
                 );
               })}
             </div>

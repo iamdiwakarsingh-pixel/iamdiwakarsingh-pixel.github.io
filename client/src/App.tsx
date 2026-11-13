@@ -10,9 +10,10 @@ import Research from "@/pages/Research";
 import Teaching from "@/pages/Teaching";
 import Projects from "@/pages/Projects";
 import Contact from "@/pages/Contact";
-import TheoryLab from "@/pages/TheoryLab"; // Added Theory Lab page
+import TheoryLab from "@/pages/TheoryLab";
+import TheoryLabEdition from "@/pages/TheoryLabEdition";
 
-function RouterComponent() { 
+function RouterComponent() {
   return (
     <Switch>
       <Route path="/" component={Home} />
@@ -21,6 +22,7 @@ function RouterComponent() {
       <Route path="/teaching" component={Teaching} />
       <Route path="/projects" component={Projects} />
       <Route path="/theory-lab" component={TheoryLab} />
+      <Route path="/theory-lab/:slug" component={TheoryLabEdition} />
       <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
     </Switch>
@@ -32,12 +34,9 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        
-        {/* Default basepath for user site on GitHub Pages */}
         <Router basepath="">
           <RouterComponent />
         </Router>
-
       </TooltipProvider>
     </QueryClientProvider>
   );
