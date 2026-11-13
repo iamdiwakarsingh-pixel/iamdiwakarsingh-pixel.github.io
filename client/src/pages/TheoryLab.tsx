@@ -344,11 +344,9 @@ export default function TheoryLab() {
   const [activeAct, setActiveAct] = useState(1);
   const [openRefs, setOpenRefs] = useState<Record<number, boolean>>({});
   const [copiedId, setCopiedId] = useState<string | null>(null);
-  // Tracks which PDFs exist on the server (Weeks 1-4 enabled by default; Weeks 5-24 checked dynamically)
   const [availablePdfs, setAvailablePdfs] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
-    // Automatically check which PDFs for Weeks 5-24 have been uploaded
     const checkFuturePdfs = async () => {
       const results: Record<string, boolean> = {};
       const checks: Promise<void>[] = [];
@@ -561,7 +559,6 @@ export default function TheoryLab() {
 
                       {refsExpanded && (
                         <div className="mt-3 p-4 bg-muted/40 border border-border/70 rounded-lg space-y-3 text-xs">
-                          {/* Tuesday APA */}
                           <div className="flex items-start justify-between gap-3">
                             <div>
                               <span className="font-mono font-bold text-[10px] uppercase text-amber-700 block mb-0.5">
@@ -589,7 +586,6 @@ export default function TheoryLab() {
                             </button>
                           </div>
 
-                          {/* Saturday APA */}
                           <div className="flex items-start justify-between gap-3 pt-2.5 border-t border-border/50">
                             <div>
                               <span className="font-mono font-bold text-[10px] uppercase text-slate-700 block mb-0.5">
@@ -682,6 +678,7 @@ export default function TheoryLab() {
                         )}
                       </div>
                     </div>
+                  </div>
                 );
               })}
             </div>
