@@ -141,42 +141,100 @@ export const EDITIONS: EditionContent[] = [
     wk: 1,
     day: "Saturday",
     seriesLabel: "The Theory Lab",
-    title: "That’s Interesting! The Sociology of What Commands Attention",
-    paperShort: "Davis (1971) • Philosophy of the Social Sciences",
+    title: "That’s Interesting! Towards a Phenomenology of Sociology and a Sociology of Phenomenology",
+    paperShort: "Murray S. Davis (1971) • Philosophy of the Social Sciences • Research Note B01",
     apaCitation:
-      "Davis, M. S. (1971). That's interesting! Towards a phenomenology of sociology and a sociology of phenomenology. Philosophy of the Social Sciences, 1(2), 309–344. https://doi.org/10.1177/004839317100100211",
+      "Davis, M. S. (1971). That’s interesting! Towards a phenomenology of sociology and a sociology of phenomenology. Philosophy of the Social Sciences, 1(4), 309–344. https://doi.org/10.1177/004839317100100211",
     pdfPath: "/theory-lab/W1_Saturday_TL.pdf",
     coreTakeaway:
-      "Theories endure not because they are merely 'true' in a vacuum, but because they systematically challenge an audience's taken-for-granted assumptions without overturning their entire worldview.",
+      "Truth is the entry condition that gets a paper through peer review, not what makes it remembered. A proposition is judged ‘interesting’ when it denies a taken-for-granted assumption held by its specific audience—and also passes Davis’s second test by changing what readers do on Monday.",
     sections: [
       {
-        heading: "1. Why Technically Valid Papers Disappear Quietly",
+        heading: "1 · Start Here",
         body: [
-          "Passing the editorial gate is only half the battle. Thousands of methodologically sound articles are published every year and never cited. Murray Davis (1971) asked why certain social science ideas become classics while others vanish.",
-          "His answer overturned naive positivism: a theory is judged 'interesting' when it attacks an assumption held by its specific audience—showing that what seemed like X is actually Y."
+          "You read something this week. You stopped. You sent it to a friend. Now ask yourself an honest question. Did you send it because it was true? Almost certainly not. Hundreds of true things passed in front of your eyes that day—the share price, the weather, the time of a meeting. All true, all forgotten within the minute.",
+          "You sent that one thing because it did something to you. It pushed against something you already believed, and for a second you had to stop and rearrange your thinking. That small moment, the little jolt before you hit forward, is the entire subject of the paper this note explains.",
+          "Murray Davis wrote it in 1971. He was a sociologist, not a management scholar, and he was not writing advice for researchers. He was asking a question that had been sitting in plain sight for a century: why are some ideas remembered and most forgotten, when nearly all of them are perfectly correct?",
+          "Learning Outcomes: After reading this note, you should be able to (1) say why being correct is not enough without sounding as though you are against being correct, (2) name the assumption your own paper denies in one sentence, (3) recognize the three ways work fails to land and tell them apart, (4) use Davis’s twelve moves to describe what kind of claim a paper is making, and (5) understand why the famous paper everyone cites felt so obvious when you finally read it."
         ]
       },
       {
-        heading: "2. The Goldilocks Zone of Assumption-Challenging",
+        heading: "2 · The Original Scholarship & How to Read It",
         body: [
-          "Davis mapped twelve logical forms of the 'Index of the Interesting'—including organization (what seems disorganized is actually structured), abstraction (what seems an individual trait is actually a collective property), and evaluation (what seems harmful actually sustains the system).",
-          "Crucially, a claim must stay in a narrow cognitive band: if it confirms what readers already believe, they say 'That's obvious.' If it denies every foundational belief they hold, they say 'That's absurd.' Only when it overturns a secondary assumption while leaving core premises intact do readers say 'That's interesting!'"
+          "Publication Details: Philosophy of the Social Sciences, Vol. 1 (1971), pp. 309–344. Length: Thirty-five pages (the first ten carry the argument). Type: Peer-reviewed essay in philosophy of social science. Author at the time: Northern Illinois University (Sociology).",
+          "Bibliographic Verification Note: Library and database records disagree on the issue number—one library copy records this as 1:4 (December 1971), while some indexes list it as 1(2). The year, volume, pages, and journal are not in dispute, and those four are enough for any reader to locate it. This series checks references rather than copying them, and states when a detail cannot be settled rather than picking one quietly.",
+          "Access & How to Read It: Published by Sage, clean copies are also openly hosted by several universities for teaching purposes. Thirty-five pages is daunting and unnecessary: read the first ten pages slowly, as they contain the entire argument, and graze the remaining twenty-five pages of propositional examples."
+        ]
+      },
+      {
+        heading: "3 · Detailed Explanation: Mechanism, Failure Modes & The Twelve Moves",
+        body: [
+          "The Sentence That Offends People: Davis opens: ‘It has long been thought that a theorist is considered great because his theories are true, but this is false. A theorist is considered great, not because his theories are true, but because they are interesting.’ Read quickly, this sounds like an attack on truth. He is saying nothing of the kind.",
+          "Why Truth Cannot Be What Makes You Remembered: Think about a competitive examination. Everyone who gets through has to clear the qualifying marks—clearing them is compulsory, but it is not what separates the person who gets the post from the thousand others who also cleared them. Everything that gets published is supposed to be true; peer review tests truth at the door. Truth is the entry condition. Students who follow every rule in theory-construction textbooks and nothing else, Davis warns, ‘will turn out work which will be found dull indeed. Their impeccably constructed theories will go unnoted, or, more precisely, unfootnoted.’",
+          "The Mechanism: Something is interesting when it denies an assumption its audience already holds. Borrowing from Harold Garfinkel’s ‘routinized taken-for-granted world of everyday life,’ Davis calls this the routinely held assumption-ground. Being interesting is therefore not a property of a claim alone, but a relation between a claim and an audience.",
+          "The Three Ways It Goes Wrong: (1) ‘That’s obvious’ — you confirmed what they already believed, so they affirm its truth while rejecting its value. (2) ‘That’s irrelevant’ — your claim touches neither side of their assumption-ground, so they cannot argue with it or use it. (3) ‘That’s absurd’ — you attacked a belief that is gripped rather than merely held, or denied their entire assumption-ground at once, risking being dismissed as a ‘crackpot.’ None of these three failures is a problem with your data; all three are errors in reading the audience.",
+          "The Hidden Skill (Empathy): In a rarely quoted footnote, Davis writes: ‘The quality of being imaginative which interesting theorists are praised for possessing consists less of their ability to imagine inventively something novel than of their ability to imagine empathetically what others consider to be traditional.’ You cannot deny an assumption you cannot see.",
+          "The Standard Form of a Research Paper: Davis maps the four-part rhetorical skeleton still used today: (1) Articulate the audience’s assumption (‘It has long been thought…’), (2) Deny it (‘But this is false…’), (3) Prove the old assumption wrong and the new one right (‘We have seen instead that…’), and (4) Close with practical consequences (‘Further investigation is necessary to…’).",
+          "The Index — Twelve Ways to Turn an Idea Around: Looking at one thing: (1) Organization (what seems disorganized is organized), (2) Composition (what seem several things are one, or one is several), (3) Abstraction (what seems individual is collective—e.g., Durkheim on suicide—or the reverse, e.g., Freud on war), (4) Generalization (what seems local is general, or the reverse), (5) Stabilization (what seems stable is changing, or the reverse), (6) Function (what seems to work badly works well). Looking at several things together: (7) Evaluation (what seems bad is good—e.g., fever fighting illness), (8) Co-relation (what seem unrelated go together), (9) Co-existence (what seem incompatible coexist), (10) Co-variation (a positive relationship is negative), (11) Opposition (what seem similar are opposites), (12) Causation (the effect is actually the cause). Causation is the strongest move and hardest to earn; Generalization is the weakest and most common.",
+          "The Second Test (Practical Significance): Denying an assumption is not enough. A theory is ‘truly interesting’ only if it also denies the significance of what the audience is currently doing—otherwise it earns a shrug: ‘So what? Who cares?’ A curiosity surprises you; a contribution makes you work differently on Monday. Davis ends his 35-page essay by aiming that exact line at himself.",
+          "What Happens When You Win: Once an interesting claim persuades the field, it gets taught and absorbed into the assumption-ground—becoming ‘obvious.’ This is why famous classics often feel unremarkable when students finally read them: the ground underneath them moved."
+        ]
+      },
+      {
+        heading: "4 · Key Concepts",
+        body: [
+          "The interesting: A relation between a claim and an audience, occurring when a proposition denies an assumption that specific audience already holds.",
+          "The assumption-ground: Davis’s term, built on Garfinkel, for the web of propositions an audience takes for granted without examining.",
+          "The index of the interesting: Davis’s descriptive catalogue of twelve logical moves (twenty-four with inverses) by which famous social theories denied assumptions—best used diagnostically rather than as a brainstorming formula.",
+          "The second test (practical significance): The requirement that a claim must also alter the significance of what the audience is currently doing, separating a true contribution from a mere curiosity.",
+          "The half-life of an idea: The process by which a winning proposition is absorbed into the background assumptions of a field and ceases to feel surprising."
+        ]
+      },
+      {
+        heading: "5 · Theory Lab Interpretation: The Closed Door & Reading My Own Work",
+        body: [
+          "The Closed Door: Picture a door to hold the three failure modes together. If the door stands wide open, you walk through and feel nothing (‘That’s obvious’). If there is no door at all, just wall, you walk past without noticing (‘That’s irrelevant’). If the door is bolted and reinforced, you bounce off holding your nose (‘That’s absurd’). The interesting idea is the door that is closed but not locked: you push, it gives way, and you step somewhere unexpected.",
+          "Reading My Own Work Through the Index: Take my paper in IIMB Management Review on Lokasamgraha as an indigenous construct for social entrepreneurship. Against Davis’s index, the move is Generalization: what is assumed to belong to one tradition is shown to explain how mission-driven enterprises hold together generally, denying the assumption that management theory comes from one part of the world while everywhere else supplies cases. Take my paper on jugaad and paradox in Indian social enterprises: usually dismissed as a makeshift compromise, the move is Evaluation and Function—showing that what looks like a deficiency holds competing demands together. Davis’s index did not generate those papers, but it gave me the one-sentence explanation reviewers ask for.",
+          "[ YOUR STORY HERE ] Add two or three sentences recalling a moment when a reviewer, supervisor, or colleague told you your work was correct but did not land, or asked what the contribution was—and how you would answer now.",
+          "Two Deaths, One Cause: Kilduff’s death is loud and arrives in six days with a letter; Davis’s death is silent—the paper is published, entirely correct, and left unfootnoted. Both are failures of audience, not execution.",
+          "Why a 1971 Essay Still Matters: Sitting journal editors still rely on it—Colquitt and George cite Davis on curiosity, Barney echoes him against ‘nobody has studied this before,’ and Weick places ‘that’s interesting’ at the center of theorizing. Once absorbed, you stop asking ‘is my contribution interesting?’ and start asking ‘interesting to whom, and what do they currently believe?’"
+        ]
+      },
+      {
+        heading: "6 · Apply the Learning: The Two-Minute Test",
+        body: [
+          "Write one sentence about your current paper starting with: ‘It has long been thought that…’ followed by ‘…but in fact…’ If you cannot write it, the target assumption has not been identified yet.",
+          "Three Diagnostic Checks: (1) Does anyone actually hold the first half? Name a paper, reviewer, or colleague who believes it—otherwise you invented a straw man that lands as irrelevant. (2) Which of the twelve moves are you making? If it is Generalization alone, decide whether that is sufficient. (3) Does your finding change what readers should be doing on Monday? If not, it fails Davis’s second test."
+        ]
+      },
+      {
+        heading: "7 · Further Reading & Series Continuation",
+        body: [
+          "Read Immediately Afterwards: Tihanyi, L. (2020). From ‘that’s interesting’ to ‘that’s important.’ Academy of Management Journal, 63(2), 329–331—an essential editorial corrective warning against chasing the appearance of surprise over substance.",
+          "Source of Davis’s Central Idea: Garfinkel, H. (1967). Studies in ethnomethodology. Prentice-Hall.",
+          "Where Davis Reappears in Series 1: Colquitt & George (2011) on topic choice (Week 2, Tuesday); Weick (1989) on disciplined imagination (Week 4, Saturday); Alvesson & Sandberg (2011) on problematization (Week 5, Saturday); and Kuhn (1962), The Structure of Scientific Revolutions, for paradigm shifts at the field level.",
+          "Next in Series 1: A02 · The Editor’s Desk · Week 2, Tuesday: Colquitt and George (2011) on topic choice."
         ]
       }
     ],
     examples: [
       {
         type: "Documented",
-        label: "Davis's Twelve Categories",
-        text: "Davis (1971) demonstrated his framework across classic works by Durkheim (suicide as a social rather than purely individual phenomenon) and Goffman (everyday interaction as theatrical dramaturgy)."
+        label: "Durkheim on Suicide & Freud on War (Abstraction Move)",
+        text: "Davis (1971) illustrates the Abstraction move—showing that what appears purely individual is actually a collective property—through Durkheim’s demonstration that suicide rates follow stable sociological patterns, alongside Freud’s inverse move treating war as a psychological phenomenon."
+      },
+      {
+        type: "Illustrative",
+        label: "Lokasamgraha & Jugaad Through Davis’s Index",
+        text: "Framing lokasamgraha as a generalizable organizational construct executes Davis’s Generalization move (challenging Western-only theory generation), while showing how jugaad sustains competing social and commercial demands executes the Evaluation and Function moves."
       },
       {
         type: "Contested",
-        label: "Interestingness vs. Truth",
-        text: "Later scholars—including Weick and Bartunek—cautioned that chasing 'counter-intuitive' novelty alone can encourage clever paradox-mongering at the expense of cumulative, reliable empirical knowledge."
+        label: "Counter-Intuitive Novelty vs. Substance (Tihanyi, 2020)",
+        text: "Davis’s essay is descriptive rather than a discovery method, assumes a single unified audience rather than fragmented subfields, and selects on famous outcomes. As AMJ editor Laszlo Tihanyi (2020) cautioned, fifty years of chasing ‘that’s interesting’ can reward contrived surprise over genuine importance."
       }
     ],
     limitations:
-      "Davis analyzes the rhetorical and cognitive reception of theory rather than empirical verification; an interesting proposition still requires rigorous logical or empirical grounding to stand as valid scholarship."
-  }
+      "Davis (1971) offers a sociological description of audience reception rather than a method for generating or validating empirical findings. His framework assumes a relatively unified audience assumption-ground (whereas modern management subfields are fragmented), selects retrospectively on famous theories, and—as Tihanyi (2020) later noted—can encourage superficial contrarianism if divorced from practical and empirical importance."
+  },
 ];
